@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<title>Digital Twin — Case Study — NextEmTech</title>
+<meta name="description" content="Project Operations Digital Twin — an AI-assisted command center fusing project management and DORA delivery telemetry, built by NextEmTech.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <img src="assets/icon-mark.svg" alt="NextEmTech">
+      <div class="logo-text">
+        <div class="logo-name">Next<span class="accent">Em</span>Tech</div>
+        <div class="logo-tagline">Next Emerging Technology</div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <a href="case-studies.html" class="back-link">&larr; All Case Studies</a>
+    <div><span class="case-tag-badge">Digital Twin</span></div>
+    <h1>Project Operations Digital Twin</h1>
+  </div>
+</div>
+
+<section class="block">
+  <div class="container prose">
+    <div>
+      <span class="tag">ProjectCore</span>
+      <span class="tag">Telemetry</span>
+      <span class="tag">AI</span>
+    </div>
+
+    <p style="color:var(--amber); font-weight:600; margin-top:20px;">Enterprise AI Agentic architecture, including AI Agents implementation.</p>
+
+    <p>The Project Operations Digital Twin is an application that models a real multi-phase, digital transformation program and converts its raw engineering activity into governed, AI-assisted decision support. It fuses two data disciplines that are usually reported separately — traditional project management (schedule, cost, risk, milestones) and DORA software delivery metrics (deploy frequency, lead time, change fail rate, recovery time, rework rate) — into a single Command Center, then uses an AI Agent to correlate signals across both and surface what a program manager should investigate next.</p>
+
+    <p>The application is deliberately built around one non-negotiable principle: the AI Agent analyzes, but never decides. Every AI call is a single, stateless request — no tools, no autonomous loop, no memory of previous runs — and every response is stored as a labeled, timestamped, advisory artifact that a human reviews before any action is taken. This is not a limitation of the build; it is the architecture's central design commitment.</p>
+
+    <blockquote class="pullquote">
+      AI provides the analysis. The person owns the decision.
+    </blockquote>
+
+    <div class="chart-stack" style="margin-top:36px;">
+      <img src="assets/chart-health-trend.png" alt="Program health 8-week trend, declining from 84 to 60" style="width:100%; height:auto; display:block; border-radius:12px;">
+      <img src="assets/chart-dora.png" alt="DORA delivery metrics: deploy frequency, lead time, change fail rate, recovery time, rework rate" style="width:100%; height:auto; display:block; border-radius:12px;">
+      <img src="assets/chart-risk.png" alt="Risk exposure by severity: 4 critical, 10 high, 7 medium, 0 low, 21 tracked total" style="width:100%; height:auto; display:block; border-radius:12px;">
+    </div>
+
+    <p style="margin-top:24px;">Proprietary to Deeb Haddad, © 2026. All rights reserved.</p>
+
+    <div class="cta-row" style="justify-content:flex-start;">
+      <a href="https://poc-digital-twin-prototype.netlify.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View the live prototype</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-logo">Next<span class="accent">Em</span>Tech</div>
+    <p>Digital Transformation Consulting &amp; Training · Amman, Jordan</p>
+    <p>&copy; 2026 NextEmTech. For more info: <a href="mailto:info@nextmtech.com">info@nextmtech.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
