@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <title>Case Studies — NextEmTech</title>
-<meta name="description" content="Project Operations Digital Twin — an AI-assisted command center fusing project management and DORA delivery telemetry, built by NextEmTech.">
+<meta name="description" content="Case studies from NextEmTech: the Project Operations Digital Twin, an AI-enabled digital banking platform, a school system modernization, a startup analytics platform, and an enterprise data intelligence pipeline.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -16,7 +16,10 @@
   <div class="container">
     <div class="logo">
       <img src="assets/icon-mark.svg" alt="NextEmTech">
-      Next<span class="accent">Em</span>Tech
+      <div class="logo-text">
+        <div class="logo-name">Next<span class="accent">Em</span>Tech</div>
+        <div class="logo-tagline">Next Emerging Technology</div>
+      </div>
     </div>
     <nav class="main-nav">
       <ul>
@@ -33,32 +36,9 @@
 <div class="page-hero">
   <div class="container">
     <h1>Case Studies</h1>
-    <p>Real projects, real architecture decisions.</p>
+    <p>Real projects, real architecture decisions. Five case studies, each on its own page.</p>
   </div>
 </div>
-
-<section class="block">
-  <div class="container prose">
-    <div>
-      <span class="tag">ProjectCore</span>
-      <span class="tag">Telemetry</span>
-      <span class="tag">AI</span>
-    </div>
-    <h2 style="text-align:left; margin-top:20px;">Project Operations Digital Twin</h2>
-    <p style="color:var(--amber); font-weight:600;">Enterprise AI Agentic architecture, including AI Agents implementation.</p>
-    <p>The Project Operations Digital Twin is an application that models a real multi-phase, digital transformation program and converts its raw engineering activity into governed, AI-assisted decision support. It fuses two data disciplines that are usually reported separately — traditional project management (schedule, cost, risk, milestones) and DORA software delivery metrics (deploy frequency, lead time, change fail rate, recovery time, rework rate) — into a single Command Center, then uses an AI Agent to correlate signals across both and surface what a program manager should investigate next.</p>
-    <p>The application is deliberately built around one non-negotiable principle: the AI Agent analyzes, but never decides. Every AI call is a single, stateless request — no tools, no autonomous loop, no memory of previous runs — and every response is stored as a labeled, timestamped, advisory artifact that a human reviews before any action is taken. This is not a limitation of the build; it is the architecture's central design commitment.</p>
-    <blockquote class="pullquote">
-      AI provides the analysis. The person owns the decision.
-    </blockquote>
-    <img src="assets/telemetry-infographic.png" alt="Sample program telemetry: 8-week health trend, DORA delivery metrics, and risk exposure breakdown" style="width:100%; height:auto; border-radius:12px; margin:32px 0; display:block;">
-
-    <p>Proprietary to Deeb Haddad, © 2026. All rights reserved.</p>
-    <div class="cta-row" style="justify-content:flex-start;">
-      <a href="https://poc-digital-twin-prototype.netlify.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View the live prototype</a>
-    </div>
-  </div>
-</section>
 
 <section class="block alt">
   <div class="container prose">
@@ -88,80 +68,35 @@
 <section class="block">
   <div class="container prose">
 
-    <div class="case-entry" style="padding-top:0; border-top:none;">
-      <div class="role-label">Project Manager / Solutions Architect</div>
+    <a href="case-digital-twin.html" class="case-list-item">
+      <span class="case-tag-badge">Digital Twin</span>
+      <h3>Project Operations Digital Twin</h3>
+      <p>Fusing project management and DORA telemetry into one AI-assisted command center.</p>
+    </a>
+
+    <a href="case-digital-banking.html" class="case-list-item">
+      <span class="case-tag-badge">Digital Banking</span>
       <h3>AI-Enabled Digital Banking Platform</h3>
-      <div class="case-grid">
-        <div class="col">
-          <h4>The Challenge</h4>
-          <p>Modernize customer banking services, improve operational efficiency, and establish a secure, cloud-native foundation for AI-powered fintech innovation — within a regulated financial environment.</p>
-        </div>
-        <div class="col">
-          <h4>The Leadership</h4>
-          <p>Defined the business case, governance model, and success criteria. Built the project plan, architecture, and roadmap. Led cross-functional teams delivering AI capabilities, secure APIs, and digital banking services using a hybrid predictive-Agile delivery model.</p>
-        </div>
-        <div class="col">
-          <h4>The Result</h4>
-          <p>A secure, scalable AI-powered banking platform improving customer experience and operational efficiency, with a foundation built for future fintech expansion.</p>
-        </div>
-      </div>
-    </div>
+      <p>Modernizing customer banking services with a secure, AI-powered cloud-native foundation.</p>
+    </a>
 
-    <div class="case-entry">
-      <div class="role-label">Project Manager</div>
+    <a href="case-school-system.html" class="case-list-item">
+      <span class="case-tag-badge">School System</span>
       <h3>Cloud-Based Learning &amp; School Management System</h3>
-      <div class="case-grid">
-        <div class="col">
-          <h4>The Problem</h4>
-          <p>Multiple schools operated with fragmented academic and administrative systems and limited digital learning infrastructure, needing a unified, secure, cloud-based platform.</p>
-        </div>
-        <div class="col">
-          <h4>The Leadership</h4>
-          <p>Developed the governance framework and full project management plan. Engaged executive, academic, IT, vendor, teacher, student, and parent stakeholders. Applied a hybrid methodology — predictive for infrastructure and security, Agile for configuration and feature delivery.</p>
-        </div>
-        <div class="col">
-          <h4>The Result</h4>
-          <p>Successful pilot completion with improved process standardization and data visibility, establishing a controlled feedback loop ahead of full rollout.</p>
-        </div>
-      </div>
-    </div>
+      <p>Unifying fragmented academic and administrative systems across multiple schools.</p>
+    </a>
 
-    <div class="case-entry">
-      <div class="role-label">Project Manager</div>
+    <a href="case-startup-analytics.html" class="case-list-item">
+      <span class="case-tag-badge">Startup Analytics</span>
       <h3>Startup Performance &amp; Analytics SaaS Platform</h3>
-      <div class="case-grid">
-        <div class="col">
-          <h4>The Problem</h4>
-          <p>Startup performance data was siloed and difficult to analyze. A centralized, secure platform was needed to collect, analyze, and act on performance metrics.</p>
-        </div>
-        <div class="col">
-          <h4>The Leadership</h4>
-          <p>Aligned platform customization with strategic objectives, defined privacy and security requirements for sensitive data, coordinated distributed teams, and managed schedule, cost, and quality validation using a hybrid methodology.</p>
-        </div>
-        <div class="col">
-          <h4>The Outcome</h4>
-          <p>A centralized environment for data collection and analysis, enabling more data-driven insight and improved visibility into performance.</p>
-        </div>
-      </div>
-    </div>
+      <p>Turning siloed startup performance data into a centralized, secure analytics platform.</p>
+    </a>
 
-    <div class="case-entry">
+    <a href="case-data-intelligence.html" class="case-list-item">
+      <span class="case-tag-badge">Data Intelligence</span>
       <h3>Enterprise Data Intelligence Pipeline</h3>
-      <div class="case-grid">
-        <div class="col">
-          <h4>The Context</h4>
-          <p>Enterprise data lived scattered across platforms like SAP, ERP, and CRM systems — reliable for transactions, difficult to turn into something AI could act on.</p>
-        </div>
-        <div class="col">
-          <h4>The Innovation</h4>
-          <p>Built data pipelines connecting multiple platforms and databases, with automated data cleaning and quality audit checks at every stage before anything reaches the intelligence layer. An Enterprise Agentic model and a RAG (Retrieval-Augmented Generation) layer work together on top — AI agents that reason over grounded, verified data instead of raw, unchecked feeds.</p>
-        </div>
-        <div class="col">
-          <h4>The Impact</h4>
-          <p>A trusted data intelligence layer connecting enterprise systems end to end — clean, audited data flowing through to AI agents built to be trusted with it.</p>
-        </div>
-      </div>
-    </div>
+      <p>Connecting SAP, ERP, and CRM data through clean, audited pipelines for AI agents.</p>
+    </a>
 
   </div>
 </section>
