@@ -46,11 +46,12 @@ header.site-header .container {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
-  font-size: 1.25rem;
   color: var(--navy);
 }
 .logo img { height: 34px; width: 34px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-name { font-weight: 700; font-size: 1.25rem; }
+.logo-tagline { font-size: 0.7rem; font-weight: 500; color: var(--slate); letter-spacing: 0.3px; }
 .logo .accent { color: var(--amber); }
 nav.main-nav ul {
   list-style: none;
