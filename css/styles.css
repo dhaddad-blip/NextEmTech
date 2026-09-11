@@ -255,3 +255,46 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   nav.main-nav ul { gap: 16px; justify-content: center; }
   .contact-box { padding: 32px 20px; }
 }
+
+/* LinkedIn connect card */
+.linkedin-card {
+  max-width: 420px;
+  margin: 40px auto 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.linkedin-card:hover {
+  border-color: var(--amber);
+  box-shadow: 0 2px 10px rgba(15,42,74,0.08);
+  text-decoration: none;
+}
+.linkedin-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: #0A66C2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.linkedin-card-text strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1rem;
+}
+.linkedin-card-text span {
+  color: var(--amber);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
