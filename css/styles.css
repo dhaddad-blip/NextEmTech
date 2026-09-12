@@ -403,6 +403,26 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .case-list-item p { color: var(--slate); margin: 0; font-size: 0.96rem; }
 .chart-stack > * { margin-bottom: 24px; }
 
+/* Supporting process/flow/chart graphics — capped so they read as supporting
+   visuals rather than dominating the surrounding text */
+.support-graphic {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 12px;
+}
+
+@media (max-width: 680px) {
+  .page-hero h1 { font-size: 1.7rem; }
+  section.block h2 { font-size: 1.5rem; }
+  .case-entry h3 { font-size: 1.25rem; }
+  .hero p.lead { font-size: 1.02rem; }
+  section.block { padding: 40px 0; }
+  .support-graphic { margin: 16px auto; }
+}
+
 /* Back to top button (pure CSS anchor, no JS - keeps the CSP script-src: none intact) */
 .back-to-top {
   position: fixed;
