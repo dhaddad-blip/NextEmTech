@@ -256,6 +256,7 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   .eyebrow { font-size: 0.72rem; letter-spacing: 1.2px; }
   .hero h1 { font-size: 1.6rem; line-height: 1.25; }
   .hero p.lead { font-size: 1rem; margin-bottom: 18px; }
+  .card-grid { grid-template-columns: 1fr; }
   nav.main-nav ul { gap: 16px; justify-content: center; }
   .contact-box { padding: 32px 20px; }
 }
