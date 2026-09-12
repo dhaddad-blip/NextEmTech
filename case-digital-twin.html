@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-lZYtJ9+4AfqlVDqydHH3I8zJSSAkcJs2BmlTeSTx7gs=' 'sha256-mlX8QGBMEd8TAhoYM0MFHRVjQQciPP/PdJpuBm7ZOrU='; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self'; img-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Z7DYQ6Q8E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4Z7DYQ6Q8E');
+</script>
 <title>Digital Twin — Case Study — NextEmTech</title>
 <meta name="description" content="Project Operations Digital Twin — an AI-assisted command center fusing project management and DORA delivery telemetry, built by NextEmTech.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
