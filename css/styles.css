@@ -525,3 +525,24 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 @media (max-width: 680px) {
   [dir="rtl"] .hero h1 { padding-left: 0; padding-right: 16px; }
 }
+
+/* FAQ accordion - pure HTML details/summary, no JavaScript */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.3rem; color: var(--amber); flex-shrink: 0; }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { color: var(--slate); margin: 12px 0 0; }
