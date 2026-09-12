@@ -468,7 +468,10 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   .back-to-top { width: 42px; height: 42px; bottom: 16px; right: 16px; font-size: 1.2rem; }
 }
 
-/* Language switcher — pure HTML details/summary, no JavaScript required */
+/* Language switcher — pure HTML details/summary, no JavaScript required.
+   Lives inside nav.main-nav ul as a normal list item, so it wraps and
+   centers using the exact same behavior already proven to work for the
+   other nav links — no separate positioning logic to fight. */
 .lang-switch {
   position: relative;
   display: inline-block;
@@ -476,11 +479,11 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .lang-switch summary {
   cursor: pointer;
   list-style: none;
-  padding: 8px 14px;
+  padding: 6px 14px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 0.85rem;
   color: var(--navy);
 }
 .lang-switch summary::-webkit-details-marker { display: none; }
@@ -489,12 +492,13 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .lang-menu {
   position: absolute;
   top: calc(100% + 6px);
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(15,42,74,0.12);
-  min-width: 140px;
+  min-width: 120px;
   overflow: hidden;
   z-index: 50;
 }
@@ -504,10 +508,10 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   color: var(--navy);
   font-weight: 500;
   font-size: 0.92rem;
+  text-align: center;
 }
 .lang-menu a:hover { background: var(--bg-alt); text-decoration: none; }
 .lang-menu a.active { color: var(--amber); font-weight: 700; }
-[dir="rtl"] .lang-menu { right: auto; left: 0; }
 
 /* RTL overrides — additive only, does not touch existing LTR rules */
 [dir="rtl"] .hero h1 {
