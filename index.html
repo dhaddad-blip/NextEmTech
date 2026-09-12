@@ -45,6 +45,7 @@
 <link rel="alternate" hreflang="ar" href="https://nextmtech.com/index-ar.html">
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/index.html">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/carousel.js" defer></script>
 </head>
 <body id="top">
 
@@ -85,12 +86,12 @@
     <div class="eyebrow">Intelligent Transformation Consulting &amp; Training</div>
     <h1>AI transformation, delivered by people who've built it.</h1>
     <p class="lead">A group of professionals and transformation catalysts turning AI and project-management discipline into real delivery outcomes — not just pilots.</p>
-    <p class="lead" style="font-weight:600; color:var(--navy);">Intelligent delivery with value — built for sustainability, not just launch day.</p>
+    <p class="lead lead-emphasis">Intelligent delivery with value — built for sustainability, not just launch day.</p>
     <div class="cta-row">
       <a href="services.html#consulting" class="btn btn-primary">Explore Consulting</a>
       <a href="services.html#training" class="btn btn-secondary">Explore Training</a>
     </div>
-    <p style="text-align:center; color:var(--slate); font-size:0.9rem; margin-top:18px;">Working remotely, delivering online — serving organizations of meaningful scale, globally.</p>
+    <p class="text-center note-slate mt-18">Working remotely, delivering online — serving organizations of meaningful scale, globally.</p>
   </div>
 </section>
 
@@ -98,23 +99,35 @@
   <div class="container">
     <h2>What we do</h2>
     <p class="section-lead">Two tracks, one goal: AI adoption that actually holds up in production.</p>
-    <div class="card-grid">
-      <div class="card">
-        <div class="icon-badge">C</div>
-        <h3>Consulting</h3>
-        <p>Intelligent transformation strategy, AI adoption, SaaS architecture, PM/CPMAI advisory, and agentic AI implementation — always with a human in the loop.</p>
+    <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="What we do">
+      <div class="carousel-viewport">
+        <div class="carousel-track" data-carousel-track>
+          <div class="card carousel-slide">
+            <div class="icon-badge">C</div>
+            <h3>Consulting</h3>
+            <p>Intelligent transformation strategy, AI adoption, SaaS architecture, PM/CPMAI advisory, and agentic AI implementation — always with a human in the loop.</p>
+          </div>
+          <div class="card carousel-slide">
+            <div class="icon-badge">T</div>
+            <h3>Training</h3>
+            <p>CPMAI certification prep, Enterprise Discipline Agile &amp; Scrum, and AI Fluency — delivered in Arabic and English.</p>
+          </div>
+          <div class="card carousel-slide">
+            <div class="icon-badge">P</div>
+            <h3>Featured Project</h3>
+            <p>Project Operations Digital Twin — fusing project management and DORA telemetry into one AI-assisted command center.</p>
+            <p>Enterprise AI Agentic architecture, including AI Agents implementation.</p>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <div class="icon-badge">T</div>
-        <h3>Training</h3>
-        <p>CPMAI certification prep, Enterprise Discipline Agile &amp; Scrum, and AI Fluency — delivered in Arabic and English.</p>
+      <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous slide"></button>
+      <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next slide"></button>
+      <div class="carousel-dots" data-carousel-dots>
+        <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Show slide 1" aria-selected="true"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show slide 2" aria-selected="false"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show slide 3" aria-selected="false"></button>
       </div>
-      <div class="card">
-        <div class="icon-badge">P</div>
-        <h3>Featured Project</h3>
-        <p>Project Operations Digital Twin — fusing project management and DORA telemetry into one AI-assisted command center.</p>
-        <p>Enterprise AI Agentic architecture, including AI Agents implementation.</p>
-      </div>
+      <span class="visually-hidden" data-carousel-status aria-live="polite"></span>
     </div>
   </div>
 </section>

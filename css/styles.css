@@ -154,11 +154,6 @@ section.block p.section-lead {
 }
 
 /* Cards */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 28px;
-}
 .card {
   background: #fff;
   border: 1px solid var(--border);
@@ -181,11 +176,168 @@ section.block p.section-lead {
 .card h3 { margin: 0 0 10px; font-size: 1.15rem; }
 .card p { margin: 0; color: var(--slate); font-size: 0.96rem; }
 
+/* Screen-reader-only utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Carousel ("What we do") — stays within the .container margins at all times */
+.carousel {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+}
+.carousel-track {
+  /* No-JS fallback: cards stack, exactly like the old card-grid on mobile */
+  display: block;
+}
+.carousel-track .carousel-slide {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.carousel-track .carousel-slide:last-child { margin-bottom: 0; }
+.carousel-arrow,
+.carousel-dots { display: none; }
+
+/* Active (JS-enabled) state */
+.carousel--active .carousel-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.carousel--active .carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  margin-bottom: 0;
+}
+.carousel--active .card {
+  box-shadow: 0 12px 30px rgba(15, 42, 74, 0.14);
+  margin: 6px;
+}
+.carousel--active .carousel-arrow {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(15, 42, 74, 0.15);
+  transition: background 0.15s ease, color 0.15s ease;
+  z-index: 2;
+  padding: 0;
+}
+.carousel-arrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-top: 2px solid currentColor;
+}
+.carousel-arrow-prev::before { transform: rotate(-135deg); margin-left: 3px; }
+.carousel-arrow-next::before { transform: rotate(45deg); margin-right: 3px; }
+[dir="rtl"] .carousel-arrow-prev::before { transform: rotate(45deg); margin-left: 0; margin-right: 3px; }
+[dir="rtl"] .carousel-arrow-next::before { transform: rotate(-135deg); margin-right: 0; margin-left: 3px; }
+.carousel-arrow:hover { background: var(--amber); color: #fff; }
+.carousel-arrow:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.carousel-arrow-prev { left: -20px; }
+.carousel-arrow-next { right: -20px; }
+.carousel--active .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 0;
+}
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.carousel-dot.active {
+  background: var(--amber);
+  transform: scale(1.25);
+}
+.carousel-dot:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel--active .carousel-track { transition-duration: 0s; }
+}
+
+@media (max-width: 680px) {
+  .carousel-arrow-prev { left: 2px; }
+  .carousel-arrow-next { right: 2px; }
+}
+
+/* ============================================================
+   Utilities — introduced to remove every inline style="" attribute
+   site-wide, so the site fully complies with its own
+   `style-src 'self'` CSP (inline styles were previously being
+   silently dropped by CSP-compliant browsers).
+   Directional ones use logical properties so one class works
+   correctly on both the English (ltr) and Arabic (rtl) pages.
+   ============================================================ */
+.text-start { text-align: start; }
+.text-center { text-align: center; }
+.justify-start { justify-content: flex-start; }
+.mt-0 { margin-top: 0; }
+.mt-18 { margin-top: 18px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mt-36 { margin-top: 36px; }
+.mt-48 { margin-top: 48px; }
+.max-w-680 { max-width: 680px; }
+.link-white { color: #fff; }
+
+.lead-emphasis { font-weight: 600; color: var(--navy); }
+.note-slate { color: var(--slate); font-size: 0.9rem; }
+.prose-lead { color: var(--slate); max-width: 680px; }
+.kicker-label {
+  color: var(--slate);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+.callout-amber { color: var(--amber); font-weight: 600; margin-top: 20px; }
+.icon-inline { vertical-align: -2px; margin-inline-end: 7px; }
+
+.contact-phone { color: #fff; font-size: 1.05rem; font-weight: 600; margin-bottom: 18px; }
+.btn-light {
+  background: #FFFFFF;
+  color: var(--navy);
+  border: none;
+  font-weight: 700;
+}
+.btn-light:hover { background: var(--bg-alt); text-decoration: none; }
+
 /* Pillars (Services page) */
 .pillar {
   margin-bottom: 48px;
 }
-.pillar h2 {
+section.block .pillar h2 {
   border-left: 4px solid var(--amber);
   padding-left: 16px;
   font-size: 1.6rem;
@@ -218,6 +370,13 @@ section.block p.section-lead {
   border-bottom: 1px solid var(--border);
 }
 .page-hero h1 { font-size: 2.1rem; margin: 0 0 10px; }
+.page-hero p.page-hero-subtitle {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--amber);
+  font-size: 1.15rem;
+  margin: -4px 0 12px;
+}
 .page-hero p { color: var(--slate); max-width: 620px; margin: 0; }
 
 .prose p { color: var(--slate); font-size: 1.02rem; }
@@ -271,7 +430,6 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   .eyebrow { font-size: 0.72rem; letter-spacing: 1.2px; }
   .hero h1 { font-size: 1.2rem; line-height: 1.35; padding-left: 16px; }
   .hero p.lead { font-size: 1rem; margin-bottom: 18px; }
-  .card-grid { grid-template-columns: 1fr; }
   nav.main-nav ul { gap: 16px; justify-content: center; }
   .contact-box { padding: 32px 20px; }
 }
@@ -519,6 +677,13 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   border-right: 4px solid var(--amber);
   padding-left: 0;
   padding-right: 20px;
+  text-align: right;
+}
+[dir="rtl"] section.block .pillar h2 {
+  border-left: none;
+  border-right: 4px solid var(--amber);
+  padding-left: 0;
+  padding-right: 16px;
   text-align: right;
 }
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }

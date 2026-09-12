@@ -36,6 +36,7 @@
 <link rel="alternate" hreflang="ar" href="https://nextmtech.com/index-ar.html">
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/index.html">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/carousel.js" defer></script>
 </head>
 <body id="top">
 
@@ -76,12 +77,12 @@
     <div class="eyebrow">استشارات وتدريب في التحول الذكي</div>
     <h1>تحوّل بالذكاء الاصطناعي، يقدّمه من بنوه بأنفسهم.</h1>
     <p class="lead">مجموعة من المحترفين وعوامل التحول، يحوّلون انضباط الذكاء الاصطناعي وإدارة المشاريع إلى نتائج تنفيذ حقيقية — لا مجرد تجارب أولية.</p>
-    <p class="lead" style="font-weight:600; color:var(--navy);">تنفيذ ذكي يحقق القيمة — مبني على الاستدامة، لا على يوم الإطلاق فقط.</p>
+    <p class="lead lead-emphasis">تنفيذ ذكي يحقق القيمة — مبني على الاستدامة، لا على يوم الإطلاق فقط.</p>
     <div class="cta-row">
       <a href="services-ar.html#consulting" class="btn btn-primary">استكشف الاستشارات</a>
       <a href="services-ar.html#training" class="btn btn-secondary">استكشف التدريب</a>
     </div>
-    <p style="text-align:center; color:var(--slate); font-size:0.9rem; margin-top:18px;">نعمل عن بُعد، ونقدّم خدماتنا عبر الإنترنت — لخدمة مؤسسات ذات حجم فاعل، حول العالم.</p>
+    <p class="text-center note-slate mt-18">نعمل عن بُعد، ونقدّم خدماتنا عبر الإنترنت — لخدمة مؤسسات ذات حجم فاعل، حول العالم.</p>
   </div>
 </section>
 
@@ -89,23 +90,35 @@
   <div class="container">
     <h2>ماذا نقدّم</h2>
     <p class="section-lead">مساران، هدف واحد: تبنٍّ لـ AI يصمد فعليًا في بيئة الإنتاج.</p>
-    <div class="card-grid">
-      <div class="card">
-        <div class="icon-badge">C</div>
-        <h3>الاستشارات</h3>
-        <p>استراتيجية التحول الذكي، وتبنّي AI، وهندسة SaaS، واستشارات PM/CPMAI، وتطبيق Agentic AI — دائمًا بإشراف بشري.</p>
+    <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="ماذا نقدّم">
+      <div class="carousel-viewport">
+        <div class="carousel-track" data-carousel-track>
+          <div class="card carousel-slide">
+            <div class="icon-badge">C</div>
+            <h3>الاستشارات</h3>
+            <p>استراتيجية التحول الذكي، وتبنّي AI، وهندسة SaaS، واستشارات PM/CPMAI، وتطبيق Agentic AI — دائمًا بإشراف بشري.</p>
+          </div>
+          <div class="card carousel-slide">
+            <div class="icon-badge">T</div>
+            <h3>التدريب</h3>
+            <p>التحضير لشهادة CPMAI، ومنهجية Agile &amp; Scrum المؤسسية، والطلاقة في AI — تُقدَّم بالعربية والإنجليزية.</p>
+          </div>
+          <div class="card carousel-slide">
+            <div class="icon-badge">P</div>
+            <h3>مشروع مميز</h3>
+            <p>التوأم الرقمي لعمليات المشاريع — يدمج إدارة المشاريع وقياسات DORA ضمن مركز قيادة واحد مدعوم بـ AI.</p>
+            <p>بنية Enterprise Agentic AI، تتضمن تطبيق AI Agents.</p>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <div class="icon-badge">T</div>
-        <h3>التدريب</h3>
-        <p>التحضير لشهادة CPMAI، ومنهجية Agile &amp; Scrum المؤسسية، والطلاقة في AI — تُقدَّم بالعربية والإنجليزية.</p>
+      <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="الشريحة السابقة"></button>
+      <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="الشريحة التالية"></button>
+      <div class="carousel-dots" data-carousel-dots>
+        <button type="button" class="carousel-dot active" data-carousel-dot aria-label="عرض الشريحة 1" aria-selected="true"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot aria-label="عرض الشريحة 2" aria-selected="false"></button>
+        <button type="button" class="carousel-dot" data-carousel-dot aria-label="عرض الشريحة 3" aria-selected="false"></button>
       </div>
-      <div class="card">
-        <div class="icon-badge">P</div>
-        <h3>مشروع مميز</h3>
-        <p>التوأم الرقمي لعمليات المشاريع — يدمج إدارة المشاريع وقياسات DORA ضمن مركز قيادة واحد مدعوم بـ AI.</p>
-        <p>بنية Enterprise Agentic AI، تتضمن تطبيق AI Agents.</p>
-      </div>
+      <span class="visually-hidden" data-carousel-status aria-live="polite"></span>
     </div>
   </div>
 </section>
