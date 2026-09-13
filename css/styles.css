@@ -300,6 +300,7 @@ section.block p.section-lead {
    correctly on both the English (ltr) and Arabic (rtl) pages.
    ============================================================ */
 .text-start { text-align: start; }
+.prose h2.text-start { text-align: start; }
 .text-center { text-align: center; }
 .justify-start { justify-content: flex-start; }
 .mt-0 { margin-top: 0; }
@@ -364,6 +365,13 @@ section.block p.section-lead {
   max-width: 640px;
   margin: 0 auto 28px;
   direction: rtl;
+}
+
+/* Static card grid (e.g. AI Governance 5 pillars) — all items shown at once, no carousel */
+.card-grid-static {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
 .trust-badge-wrap {
