@@ -312,6 +312,41 @@ section.block p.section-lead {
 .link-white { color: #fff; }
 .gtm-noscript-frame { display: none; visibility: hidden; }
 
+.founder-bio {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.founder-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--border);
+}
+.founder-bio-text { flex: 1; min-width: 220px; }
+.founder-name {
+  margin: 0 0 4px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.founder-title {
+  color: var(--amber);
+  font-weight: 600;
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+.founder-bio-text p:last-child { margin: 0; color: var(--slate); }
+
+@media (max-width: 680px) {
+  .founder-bio { flex-direction: column; text-align: center; }
+  .founder-bio-text { text-align: center; }
+}
+
 .lead-emphasis { font-weight: 600; color: var(--navy); }
 .note-slate { color: var(--slate); font-size: 0.9rem; }
 .prose-lead { color: var(--slate); max-width: 680px; }
