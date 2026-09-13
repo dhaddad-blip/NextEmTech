@@ -342,6 +342,30 @@ section.block p.section-lead {
 }
 .founder-bio-text p:last-child { margin: 0; color: var(--slate); }
 
+/* 404 page */
+.eyebrow-404 {
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--amber);
+  line-height: 1;
+  margin: 0 0 8px;
+}
+.hero .text-center h1 {
+  text-align: center;
+  border-left: none;
+  padding-left: 0;
+  font-style: normal;
+  max-width: none;
+  margin: 0 auto 16px;
+}
+.lead-ar {
+  font-size: 1.05rem;
+  color: var(--slate);
+  max-width: 640px;
+  margin: 0 auto 28px;
+  direction: rtl;
+}
+
 .trust-badge-wrap {
   display: flex;
   justify-content: center;
