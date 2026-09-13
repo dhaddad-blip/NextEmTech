@@ -342,6 +342,23 @@ section.block p.section-lead {
 }
 .founder-bio-text p:last-child { margin: 0; color: var(--slate); }
 
+.trust-badge-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0 8px;
+}
+.trust-badge {
+  display: inline-block;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(15, 42, 74, 0.08);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.trust-badge:hover { box-shadow: 0 8px 22px rgba(15, 42, 74, 0.14); transform: translateY(-1px); }
+.trust-badge img { display: block; width: 220px; height: auto; }
+
 @media (max-width: 680px) {
   .founder-bio { flex-direction: column; text-align: center; }
   .founder-bio-text { text-align: center; }
