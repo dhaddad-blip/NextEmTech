@@ -78,6 +78,101 @@ nav.main-nav a {
 nav.main-nav a:hover { color: var(--amber); text-decoration: none; }
 nav.main-nav a.active { color: var(--amber); }
 
+/* Slide-out drawer menu */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.menu-toggle:hover span { background: var(--amber); }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.side-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 31, 56, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 998;
+}
+.side-drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 280px;
+  max-width: 82vw;
+  background: #fff;
+  box-shadow: -8px 0 28px rgba(15, 42, 74, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.side-drawer.open { transform: translateX(0); }
+[dir="rtl"] .side-drawer { right: auto; left: 0; box-shadow: 8px 0 28px rgba(15, 42, 74, 0.18); transform: translateX(-100%); }
+[dir="rtl"] .side-drawer.open { transform: translateX(0); }
+
+.side-drawer-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.side-drawer-header img { height: 30px; width: 30px; }
+.side-drawer-header span { font-weight: 700; font-size: 1.1rem; color: var(--navy); flex: 1; }
+.side-drawer-header .accent { color: var(--amber); }
+.side-drawer-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--slate);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.side-drawer-close:hover { color: var(--navy); }
+
+.side-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+}
+.side-drawer-nav a {
+  padding: 16px 20px;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 1.02rem;
+  border-bottom: 1px solid var(--border);
+}
+.side-drawer-nav a:hover { color: var(--amber); background: var(--bg-alt); text-decoration: none; }
+
 /* Hero */
 .hero {
   padding: 72px 0 56px;

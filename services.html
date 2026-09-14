@@ -33,6 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="ar" href="https://nextmtech.com/services-ar.html">
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/services.html">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/side-drawer.js" defer></script>
 <script src="js/strip-carousel.js" defer></script>
 </head>
 <body id="top">
@@ -71,8 +72,24 @@ height="0" width="0" class="gtm-noscript-frame"></iframe></noscript>
         </li>
       </ul>
     </nav>
+    <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<div class="side-drawer-backdrop" id="side-drawer-backdrop"></div>
+<div class="side-drawer" id="side-drawer">
+  <div class="side-drawer-header">
+    <img src="assets/icon-mark.svg" alt="NextEmTech">
+    <span>Next<span class="accent">Em</span>Tech</span>
+    <button type="button" class="side-drawer-close" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="side-drawer-nav">
+    <a href="services.html">Services</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="about.html">Vision</a>
+  </nav>
+</div>
+
 
 <div class="page-hero">
   <div class="container">
