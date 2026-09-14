@@ -34,6 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/contact.html">
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/side-drawer.js" defer></script>
+<script src="js/contact-form.js" defer></script>
 </head>
 <body id="top">
 
@@ -109,6 +110,41 @@ height="0" width="0" class="gtm-noscript-frame"></iframe></noscript>
       </div>
     </div>
     <p class="text-center note-slate mt-20">نعمل عن بُعد مع عملاء حول العالم — عبر مكالمات فيديو وتعاون غير متزامن، وحضور ميداني عند الحاجة.</p>
+
+    <div class="contact-form-wrap">
+      <h2 class="text-center">أو أرسل رسالة</h2>
+      <p class="text-center note-slate">عبّئ الحقول وسيتم فتح تطبيق البريد لديك مع كل شيء جاهزًا للإرسال إلى info@nextmtech.com.</p>
+      <form id="contact-form" class="contact-form" novalidate
+            data-subject-prefix="استفسار"
+            data-label-name="الاسم"
+            data-label-email="البريد الإلكتروني"
+            data-label-topic="مهتم بـ"
+            data-required-msg="يرجى تعبئة الاسم والبريد الإلكتروني والرسالة.">
+        <div class="form-row">
+          <label for="cf-name">الاسم</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">البريد الإلكتروني</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-topic">مهتم بـ</label>
+          <select id="cf-topic" name="topic">
+            <option value="استشارات">استشارات</option>
+            <option value="تدريب">تدريب</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="cf-message">الرسالة</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">فتح البريد للإرسال</button>
+        <p class="form-note" id="cf-note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
     <div class="text-center mt-20">
       <a href="assets/nextemtech-onepager.pdf" download class="btn btn-secondary"><svg width="14" height="14" viewBox="0 0 14 14" class="icon-inline"><path d="M7 1v7M4 5l3 3 3-3M2 11h10" stroke="#0F2A4A" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>تحميل نبذة تعريفية من صفحة واحدة (PDF)</a>
     </div>
