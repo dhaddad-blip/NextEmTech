@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--navy);
-  background: var(--bg);
+  background: var(--bg) url("assets/hero-pattern.svg") repeat;
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
@@ -41,6 +41,7 @@ a:hover { text-decoration: underline; }
 
 /* Header / nav */
 header.site-header {
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
   padding: 18px 0;
 }
