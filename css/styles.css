@@ -994,3 +994,27 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .faq-item summary::after { content: "+"; font-size: 1.3rem; color: var(--amber); flex-shrink: 0; }
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item p { color: var(--slate); margin: 12px 0 0; }
+
+/* Homepage hero — single page-load entrance moment, not scroll-triggered,
+   not repeated elsewhere. Scoped to .hero-animate so it never touches the
+   404 page, which reuses the plain .hero class. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-animate .eyebrow,
+  .hero-animate h1,
+  .hero-animate p.lead,
+  .hero-animate .cta-row,
+  .hero-animate .note-slate {
+    opacity: 0;
+    animation: hero-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-animate .eyebrow { animation-delay: 0.05s; }
+  .hero-animate h1 { animation-delay: 0.16s; }
+  .hero-animate p.lead:not(.lead-emphasis) { animation-delay: 0.3s; }
+  .hero-animate p.lead-emphasis { animation-delay: 0.42s; }
+  .hero-animate .cta-row { animation-delay: 0.54s; }
+  .hero-animate .note-slate { animation-delay: 0.64s; }
+}
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
