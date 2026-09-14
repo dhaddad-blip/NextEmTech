@@ -178,6 +178,32 @@ nav.main-nav a.active { color: var(--amber); }
   padding: 72px 0 56px;
   text-align: center;
 }
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.hero-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-animate .hero-tag {
+    opacity: 0;
+    animation: hero-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-animate .hero-tag:nth-child(1) { animation-delay: 0s; }
+  .hero-animate .hero-tag:nth-child(2) { animation-delay: 0.08s; }
+  .hero-animate .hero-tag:nth-child(3) { animation-delay: 0.16s; }
+}
 .eyebrow {
   color: var(--amber);
   font-weight: 700;
@@ -475,10 +501,46 @@ section.block p.section-lead {
 .card-grid-static .card:nth-child(odd) h3 { color: #fff; }
 .card-grid-static .card:nth-child(odd) p { color: #B8C4D1; }
 
-/* Sub-topic list inside a grouped card (e.g. Services: Strategy & Advisory
-   groups 3 offerings under one box) — keeps every specific topic name
-   visible without needing a separate card each. */
-.card .topic-list {
+/* Services: Consulting / Training — one wide, elevated box per pillar
+   (not a grid of similar cards). Always light background; emphasis
+   comes from the border + shadow + amber top accent rather than from
+   color-alternation, so it stays readable as a single organized whole.
+   Governance keeps the .card-grid-static treatment above, unchanged. */
+.topic-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  border-top: 4px solid var(--amber);
+  box-shadow: 0 6px 24px rgba(15, 42, 74, 0.1);
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 36px;
+}
+.topic-group { min-width: 0; }
+.topic-divider { background: var(--border); }
+@media (max-width: 760px) {
+  .topic-box { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
+  .topic-divider { height: 1px; width: 100%; }
+}
+.topic-badge {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 10px;
+  background: var(--amber);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+.topic-group h3 { margin: 0 0 10px; color: var(--navy); }
+.topic-group p { margin: 0; color: var(--slate); }
+
+/* Sub-topic list inside a grouped card/box (e.g. Services: Strategy &
+   Advisory groups 3 offerings under one heading) — keeps every specific
+   topic name visible without needing a separate card each. */
+.card .topic-list,
+.topic-group .topic-list {
   list-style: none;
   margin: 0 0 14px;
   padding: 0;
@@ -486,11 +548,13 @@ section.block p.section-lead {
   font-weight: 600;
   color: var(--navy);
 }
-.card .topic-list li {
+.card .topic-list li,
+.topic-group .topic-list li {
   padding: 3px 0 3px 14px;
   position: relative;
 }
-.card .topic-list li::before {
+.card .topic-list li::before,
+.topic-group .topic-list li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -501,8 +565,10 @@ section.block p.section-lead {
   background: var(--amber);
 }
 .card-grid-static .card:nth-child(odd) .topic-list { color: #fff; }
-[dir="rtl"] .card .topic-list li { padding: 3px 14px 3px 0; }
-[dir="rtl"] .card .topic-list li::before { left: auto; right: 0; }
+[dir="rtl"] .card .topic-list li,
+[dir="rtl"] .topic-group .topic-list li { padding: 3px 14px 3px 0; }
+[dir="rtl"] .card .topic-list li::before,
+[dir="rtl"] .topic-group .topic-list li::before { left: auto; right: 0; }
 
 /* Auto-sliding strip carousel — boxes peek at the edges, continuous motion, pure CSS */
 .strip-carousel {
