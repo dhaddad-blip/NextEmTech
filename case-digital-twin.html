@@ -33,6 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="ar" href="https://nextmtech.com/case-digital-twin-ar.html">
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/case-digital-twin.html">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/twin-toggle.js" defer></script>
 <script src="js/side-drawer.js" defer></script>
 </head>
 <body id="top">
@@ -117,10 +118,17 @@ height="0" width="0" class="gtm-noscript-frame"></iframe></noscript>
       AI provides the analysis. The person owns the decision.
     </blockquote>
 
-    <div class="chart-stack mt-36">
+    <div class="twin-toggle" role="tablist" aria-label="Digital Twin view">
+      <button type="button" class="twin-toggle-btn active" data-view="steering" role="tab" aria-selected="true">Steering Committee View</button>
+      <button type="button" class="twin-toggle-btn" data-view="engineering" role="tab" aria-selected="false">Engineering Telemetry View</button>
+    </div>
+
+    <div class="chart-stack twin-view" data-view-panel="steering">
       <img src="assets/chart-health-trend.png" alt="Program health 8-week trend, declining from 84 to 60" class="support-graphic">
-      <img src="assets/chart-dora.png" alt="DORA delivery metrics: deploy frequency, lead time, change fail rate, recovery time, rework rate" class="support-graphic">
       <img src="assets/chart-risk.png" alt="Risk exposure by severity: 4 critical, 10 high, 7 medium, 0 low, 21 tracked total" class="support-graphic">
+    </div>
+    <div class="chart-stack twin-view" data-view-panel="engineering" hidden>
+      <img src="assets/chart-dora.png" alt="DORA delivery metrics: deploy frequency, lead time, change fail rate, recovery time, rework rate" class="support-graphic">
     </div>
 
     <p class="mt-24">Proprietary to NextEmTech, © 2026. All rights reserved.</p>

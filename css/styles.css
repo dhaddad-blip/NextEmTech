@@ -837,6 +837,32 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .case-list-item p { color: var(--slate); margin: 0; font-size: 0.96rem; }
 .chart-stack > * { margin-bottom: 24px; }
 
+.twin-toggle {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-alt);
+  padding: 5px;
+  border-radius: 30px;
+  max-width: 480px;
+  margin: 32px auto 4px;
+}
+.twin-toggle-btn {
+  flex: 1;
+  padding: 11px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--slate);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: inherit;
+}
+.twin-toggle-btn.active { background: var(--navy); color: #fff; }
+.twin-toggle-btn:hover:not(.active) { color: var(--navy); }
+.twin-view[hidden] { display: none; }
+
 /* Supporting process/flow/chart graphics — capped so they read as supporting
    visuals rather than dominating the surrounding text */
 .support-graphic {

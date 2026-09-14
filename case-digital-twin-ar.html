@@ -33,6 +33,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="ar" href="https://nextmtech.com/case-digital-twin-ar.html">
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/case-digital-twin.html">
 <link rel="stylesheet" href="css/styles.css">
+<script src="js/twin-toggle.js" defer></script>
 <script src="js/side-drawer.js" defer></script>
 </head>
 <body id="top">
@@ -117,10 +118,17 @@ height="0" width="0" class="gtm-noscript-frame"></iframe></noscript>
       الذكاء الاصطناعي يقدّم التحليل، والإنسان يملك القرار.
     </blockquote>
 
-    <div class="chart-stack mt-36">
+    <div class="twin-toggle" role="tablist" aria-label="عرض التوأم الرقمي">
+      <button type="button" class="twin-toggle-btn active" data-view="steering" role="tab" aria-selected="true">عرض اللجنة التوجيهية</button>
+      <button type="button" class="twin-toggle-btn" data-view="engineering" role="tab" aria-selected="false">عرض قياسات الهندسة</button>
+    </div>
+
+    <div class="chart-stack twin-view" data-view-panel="steering">
       <img src="assets/chart-health-trend.png" alt="اتجاه صحة البرنامج خلال 8 أسابيع، تراجع من 84 إلى 60" class="support-graphic">
-      <img src="assets/chart-dora.png" alt="مقاييس تسليم DORA: تكرار النشر، زمن التسليم، معدل فشل التغيير، زمن الاستعادة، معدل إعادة العمل" class="support-graphic">
       <img src="assets/chart-risk.png" alt="التعرض للمخاطر حسب الشدة: 4 حرجة، 10 عالية، 7 متوسطة، 0 منخفضة، من أصل 21 مخاطرة متابَعة" class="support-graphic">
+    </div>
+    <div class="chart-stack twin-view" data-view-panel="engineering" hidden>
+      <img src="assets/chart-dora.png" alt="مقاييس تسليم DORA: تكرار النشر، زمن التسليم، معدل فشل التغيير، زمن الاستعادة، معدل إعادة العمل" class="support-graphic">
     </div>
 
     <p class="mt-24">ملكية خاصة بـ NextEmTech، © 2026. جميع الحقوق محفوظة.</p>
