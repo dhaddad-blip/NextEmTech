@@ -1030,17 +1030,21 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item p { color: var(--slate); margin: 12px 0 0; }
 
-/* Homepage hero — a bold, single page-load moment, not scroll-triggered,
+/* Homepage hero -- a bold, single page-load moment, not scroll-triggered,
    not repeated elsewhere. Scoped to .hero-animate so it never touches the
    404 page, which reuses the plain .hero class.
 
    The headline types out character-by-character (word-by-word on the
-   Arabic page, to avoid breaking Arabic cursive letter-joining — see
+   Arabic page, to avoid breaking Arabic cursive letter-joining -- see
    .type-heading .tw). Everything else (eyebrow, leads, buttons, note)
    does a quieter fade+rise, timed to start only once typing finishes.
-   Because typing duration differs by language and text length, the
-   per-element start delay is set inline per page rather than hardcoded
-   here — this stylesheet only defines the shared animation itself. */
+
+   All timing lives here in the external stylesheet, never as inline
+   style="" attributes on elements -- this site's CSP is style-src 'self'
+   with no 'unsafe-inline', which silently blocks inline style attributes.
+   Per-element delays are scoped by html[lang] (both pages already carry
+   that attribute) combined with :nth-child() for the per-character/
+   per-word stagger, since EN and AR need different timings. */
 @media (prefers-reduced-motion: no-preference) {
   .hero-animate .eyebrow,
   .hero-animate p.lead,
@@ -1055,12 +1059,19 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+html[lang="en"] .hero-animate p.lead:not(.lead-emphasis) { animation-delay: 1760ms; }
+html[lang="en"] .hero-animate p.lead-emphasis            { animation-delay: 2060ms; }
+html[lang="en"] .hero-animate .cta-row                   { animation-delay: 2210ms; }
+html[lang="en"] .hero-animate .note-slate                { animation-delay: 2360ms; }
+html[lang="ar"] .hero-animate p.lead:not(.lead-emphasis) { animation-delay: 1280ms; }
+html[lang="ar"] .hero-animate p.lead-emphasis            { animation-delay: 1580ms; }
+html[lang="ar"] .hero-animate .cta-row                   { animation-delay: 1730ms; }
+html[lang="ar"] .hero-animate .note-slate                { animation-delay: 1880ms; }
 
 /* Headline typewriter. The real sentence lives in a permanent
-   .visually-hidden span for screen readers/SEO/no-JS/no-CSS — the
+   .visually-hidden span for screen readers/SEO/no-JS/no-CSS -- the
    .type-heading span is purely decorative (aria-hidden) and pure CSS,
-   no JavaScript involved. Character/word animation-delay values are
-   set inline per span; only the shared mechanics live here. */
+   no JavaScript involved. */
 @media (prefers-reduced-motion: no-preference) {
   .type-heading .tc,
   .type-heading .tw {
@@ -1078,6 +1089,7 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
     animation: cursor-life 2.1s steps(1) forwards;
     animation-delay: 0.2s;
   }
+  html[lang="ar"] .type-cursor { animation-duration: 1550ms; }
   .type-cursor::after {
     content: "";
     display: block;
@@ -1103,3 +1115,72 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   0%, 49%   { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
+
+/* Per-character (EN) / per-word (AR) reveal delays -- generated, not
+   hand-edited. Regenerate via the timing script in project notes if the
+   headline text ever changes. */
+@media (prefers-reduced-motion: no-preference) {
+  html[lang="en"] .type-heading .tc:nth-child(1) { animation-delay: 200ms; }
+  html[lang="en"] .type-heading .tc:nth-child(2) { animation-delay: 225ms; }
+  html[lang="en"] .type-heading .tc:nth-child(3) { animation-delay: 250ms; }
+  html[lang="en"] .type-heading .tc:nth-child(4) { animation-delay: 275ms; }
+  html[lang="en"] .type-heading .tc:nth-child(5) { animation-delay: 300ms; }
+  html[lang="en"] .type-heading .tc:nth-child(6) { animation-delay: 325ms; }
+  html[lang="en"] .type-heading .tc:nth-child(7) { animation-delay: 350ms; }
+  html[lang="en"] .type-heading .tc:nth-child(8) { animation-delay: 375ms; }
+  html[lang="en"] .type-heading .tc:nth-child(9) { animation-delay: 400ms; }
+  html[lang="en"] .type-heading .tc:nth-child(10) { animation-delay: 425ms; }
+  html[lang="en"] .type-heading .tc:nth-child(11) { animation-delay: 450ms; }
+  html[lang="en"] .type-heading .tc:nth-child(12) { animation-delay: 475ms; }
+  html[lang="en"] .type-heading .tc:nth-child(13) { animation-delay: 500ms; }
+  html[lang="en"] .type-heading .tc:nth-child(14) { animation-delay: 525ms; }
+  html[lang="en"] .type-heading .tc:nth-child(15) { animation-delay: 550ms; }
+  html[lang="en"] .type-heading .tc:nth-child(16) { animation-delay: 575ms; }
+  html[lang="en"] .type-heading .tc:nth-child(17) { animation-delay: 600ms; }
+  html[lang="en"] .type-heading .tc:nth-child(18) { animation-delay: 625ms; }
+  html[lang="en"] .type-heading .tc:nth-child(19) { animation-delay: 650ms; }
+  html[lang="en"] .type-heading .tc:nth-child(20) { animation-delay: 675ms; }
+  html[lang="en"] .type-heading .tc:nth-child(21) { animation-delay: 700ms; }
+  html[lang="en"] .type-heading .tc:nth-child(22) { animation-delay: 725ms; }
+  html[lang="en"] .type-heading .tc:nth-child(23) { animation-delay: 750ms; }
+  html[lang="en"] .type-heading .tc:nth-child(24) { animation-delay: 775ms; }
+  html[lang="en"] .type-heading .tc:nth-child(25) { animation-delay: 800ms; }
+  html[lang="en"] .type-heading .tc:nth-child(26) { animation-delay: 825ms; }
+  html[lang="en"] .type-heading .tc:nth-child(27) { animation-delay: 850ms; }
+  html[lang="en"] .type-heading .tc:nth-child(28) { animation-delay: 875ms; }
+  html[lang="en"] .type-heading .tc:nth-child(29) { animation-delay: 900ms; }
+  html[lang="en"] .type-heading .tc:nth-child(30) { animation-delay: 925ms; }
+  html[lang="en"] .type-heading .tc:nth-child(31) { animation-delay: 950ms; }
+  html[lang="en"] .type-heading .tc:nth-child(32) { animation-delay: 975ms; }
+  html[lang="en"] .type-heading .tc:nth-child(33) { animation-delay: 1000ms; }
+  html[lang="en"] .type-heading .tc:nth-child(34) { animation-delay: 1025ms; }
+  html[lang="en"] .type-heading .tc:nth-child(35) { animation-delay: 1050ms; }
+  html[lang="en"] .type-heading .tc:nth-child(36) { animation-delay: 1075ms; }
+  html[lang="en"] .type-heading .tc:nth-child(37) { animation-delay: 1100ms; }
+  html[lang="en"] .type-heading .tc:nth-child(38) { animation-delay: 1125ms; }
+  html[lang="en"] .type-heading .tc:nth-child(39) { animation-delay: 1150ms; }
+  html[lang="en"] .type-heading .tc:nth-child(40) { animation-delay: 1175ms; }
+  html[lang="en"] .type-heading .tc:nth-child(41) { animation-delay: 1200ms; }
+  html[lang="en"] .type-heading .tc:nth-child(42) { animation-delay: 1225ms; }
+  html[lang="en"] .type-heading .tc:nth-child(43) { animation-delay: 1250ms; }
+  html[lang="en"] .type-heading .tc:nth-child(44) { animation-delay: 1275ms; }
+  html[lang="en"] .type-heading .tc:nth-child(45) { animation-delay: 1300ms; }
+  html[lang="en"] .type-heading .tc:nth-child(46) { animation-delay: 1325ms; }
+  html[lang="en"] .type-heading .tc:nth-child(47) { animation-delay: 1350ms; }
+  html[lang="en"] .type-heading .tc:nth-child(48) { animation-delay: 1375ms; }
+  html[lang="en"] .type-heading .tc:nth-child(49) { animation-delay: 1400ms; }
+  html[lang="en"] .type-heading .tc:nth-child(50) { animation-delay: 1425ms; }
+  html[lang="en"] .type-heading .tc:nth-child(51) { animation-delay: 1450ms; }
+  html[lang="en"] .type-heading .tc:nth-child(52) { animation-delay: 1475ms; }
+  html[lang="en"] .type-heading .tc:nth-child(53) { animation-delay: 1500ms; }
+  html[lang="en"] .type-heading .tc:nth-child(54) { animation-delay: 1525ms; }
+  html[lang="en"] .type-heading .tc:nth-child(55) { animation-delay: 1550ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(1) { animation-delay: 200ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(2) { animation-delay: 330ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(3) { animation-delay: 460ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(4) { animation-delay: 590ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(5) { animation-delay: 720ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(6) { animation-delay: 850ms; }
+  html[lang="ar"] .type-heading .tw:nth-child(7) { animation-delay: 980ms; }
+}
+
