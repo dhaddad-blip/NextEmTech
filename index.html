@@ -79,7 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="alternate" hreflang="x-default" href="https://nextmtech.com/index.html">
 <link rel="stylesheet" href="css/styles.css">
 <script src="js/side-drawer.js" defer></script>
-<script src="js/carousel.js" defer></script>
+<script src="js/strip-carousel.js" defer></script>
 </head>
 <body id="top">
 
@@ -154,35 +154,43 @@ height="0" width="0" class="gtm-noscript-frame"></iframe></noscript>
   <div class="container">
     <h2>What we do</h2>
     <p class="section-lead">Two tracks, one goal: AI adoption that actually holds up in production.</p>
-    <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="What we do">
-      <div class="carousel-viewport">
-        <div class="carousel-track" data-carousel-track>
-          <div class="card carousel-slide">
-            <div class="icon-badge">C</div>
-            <h3>Consulting</h3>
-            <p>Intelligent transformation strategy, AI adoption, SaaS architecture, PM/CPMAI advisory, and agentic AI implementation — always with a human in the loop.</p>
-          </div>
-          <div class="card carousel-slide">
-            <div class="icon-badge">T</div>
-            <h3>Training</h3>
-            <p>CPMAI certification prep, Enterprise Discipline Agile &amp; Scrum, and AI Fluency — delivered in Arabic and English.</p>
-          </div>
-          <div class="card carousel-slide">
-            <div class="icon-badge">P</div>
-            <h3>Featured Project</h3>
-            <p>Project Operations Digital Twin — fusing project management and DORA telemetry into one AI-assisted command center.</p>
-            <p>Enterprise AI Agentic architecture, including AI Agents implementation.</p>
-          </div>
+    <div class="strip-carousel">
+      <button type="button" class="carousel-arrow carousel-arrow-prev" aria-label="Previous"></button>
+      <button type="button" class="carousel-arrow carousel-arrow-next" aria-label="Next"></button>
+      <div class="strip-track">
+        <div class="card">
+          <div class="icon-badge">C</div>
+          <h3>Consulting</h3>
+          <p>Intelligent transformation strategy, AI adoption, SaaS architecture, PM/CPMAI advisory, and agentic AI implementation — always with a human in the loop.</p>
+        </div>
+        <div class="card">
+          <div class="icon-badge">T</div>
+          <h3>Training</h3>
+          <p>CPMAI certification prep, Enterprise Discipline Agile &amp; Scrum, and AI Fluency — delivered in Arabic and English.</p>
+        </div>
+        <div class="card">
+          <div class="icon-badge">P</div>
+          <h3>Featured Project</h3>
+          <p>Project Operations Digital Twin — fusing project management and DORA telemetry into one AI-assisted command center.</p>
+          <p>Enterprise AI Agentic architecture, including AI Agents implementation.</p>
+        </div>
+        <div class="card" aria-hidden="true">
+          <div class="icon-badge">C</div>
+          <h3>Consulting</h3>
+          <p>Intelligent transformation strategy, AI adoption, SaaS architecture, PM/CPMAI advisory, and agentic AI implementation — always with a human in the loop.</p>
+        </div>
+        <div class="card" aria-hidden="true">
+          <div class="icon-badge">T</div>
+          <h3>Training</h3>
+          <p>CPMAI certification prep, Enterprise Discipline Agile &amp; Scrum, and AI Fluency — delivered in Arabic and English.</p>
+        </div>
+        <div class="card" aria-hidden="true">
+          <div class="icon-badge">P</div>
+          <h3>Featured Project</h3>
+          <p>Project Operations Digital Twin — fusing project management and DORA telemetry into one AI-assisted command center.</p>
+          <p>Enterprise AI Agentic architecture, including AI Agents implementation.</p>
         </div>
       </div>
-      <button type="button" class="carousel-arrow carousel-arrow-prev" data-carousel-prev aria-label="Previous slide"></button>
-      <button type="button" class="carousel-arrow carousel-arrow-next" data-carousel-next aria-label="Next slide"></button>
-      <div class="carousel-dots" data-carousel-dots>
-        <button type="button" class="carousel-dot active" data-carousel-dot aria-label="Show slide 1" aria-selected="true"></button>
-        <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show slide 2" aria-selected="false"></button>
-        <button type="button" class="carousel-dot" data-carousel-dot aria-label="Show slide 3" aria-selected="false"></button>
-      </div>
-      <span class="visually-hidden" data-carousel-status aria-live="polite"></span>
     </div>
   </div>
 </section>
