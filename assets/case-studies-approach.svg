@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="cs-title cs-desc">
+<title id="cs-title">One consistent approach across every engagement</title>
+<desc id="cs-desc">Different industries flow into one consistent methodology, producing outcomes that can be verified.</desc>
+
+<rect x="1" y="1" width="898" height="218" rx="14" fill="#FFFFFF" stroke="#E2E6EA" stroke-width="1"/>
+
+<text x="30" y="38" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700"
+      letter-spacing="1" fill="#C68E17">ENGAGEMENTS, ILLUSTRATIVE</text>
+
+<!-- Box 1: Different industries -->
+<rect x="30" y="70" width="224" height="62" rx="10" fill="#0F2A4A"/>
+<text x="142" y="96" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Startups to</text>
+<text x="142" y="117" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Global Enterprises</text>
+
+<!-- Arrow 1 -->
+<line x1="266" y1="101" x2="322" y2="101" stroke="#8992A0" stroke-width="2"/>
+<polygon points="322,101 312,96 312,106" fill="#8992A0"/>
+
+<!-- Box 2: One consistent approach (highlighted) -->
+<rect x="334" y="70" width="224" height="62" rx="10" fill="#C68E17"/>
+<text x="446" y="96" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">One Consistent</text>
+<text x="446" y="117" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Approach</text>
+
+<!-- Arrow 2 -->
+<line x1="570" y1="101" x2="626" y2="101" stroke="#8992A0" stroke-width="2"/>
+<polygon points="626,101 616,96 616,106" fill="#8992A0"/>
+
+<!-- Box 3: Outcomes -->
+<rect x="638" y="70" width="232" height="62" rx="10" fill="#0F2A4A"/>
+<text x="754" y="96" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Outcomes You</text>
+<text x="754" y="117" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Can Verify</text>
+
+<text x="450" y="192" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" fill="#5B6B7C">Regardless of industry or scale, every engagement follows the same disciplined approach.</text>
+</svg>
