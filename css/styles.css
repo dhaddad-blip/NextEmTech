@@ -536,6 +536,8 @@ section.block p.section-lead {
   .topic-divider { height: 1px; width: 100%; align-self: auto; }
 }
 .topic-summary {
+  display: block;
+  width: 100%;
   cursor: pointer;
   list-style: none;
 }
@@ -547,7 +549,7 @@ section.block p.section-lead {
    topic-group on this page, Governance included, so all three pillars
    follow the same "full title, not letters, light background" rule. */
 h3.topic-title {
-  display: block;
+  display: inline-block;
   background: var(--amber);
   color: #fff;
   font-weight: 700;
@@ -1132,6 +1134,28 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .faq-item summary::after { content: "+"; font-size: 1.3rem; color: var(--amber); flex-shrink: 0; }
 .faq-item[open] summary::after { content: "\2212"; }
 .faq-item p { color: var(--slate); margin: 12px 0 0; }
+
+/* How we work — 4 steps, replacing what used to be a static baked-in
+   image (fixed 1200x200 PNG that scaled down illegibly on mobile, and
+   had English text hardcoded even on the Arabic page). Plain numbers,
+   no circles; plain spacing, no arrow connectors -- reflows naturally
+   at any width instead of relying on a fixed-size raster image. */
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+.step-num {
+  display: block;
+  color: var(--amber);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.step h3 { margin: 0 0 6px; font-size: 1.05rem; color: var(--navy); }
+.step p { margin: 0; color: var(--slate); font-size: 0.9rem; }
 
 /* Homepage hero -- a bold, single page-load moment, not scroll-triggered,
    not repeated elsewhere. Scoped to .hero-animate so it never touches the
