@@ -475,6 +475,35 @@ section.block p.section-lead {
 .card-grid-static .card:nth-child(odd) h3 { color: #fff; }
 .card-grid-static .card:nth-child(odd) p { color: #B8C4D1; }
 
+/* Sub-topic list inside a grouped card (e.g. Services: Strategy & Advisory
+   groups 3 offerings under one box) — keeps every specific topic name
+   visible without needing a separate card each. */
+.card .topic-list {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.card .topic-list li {
+  padding: 3px 0 3px 14px;
+  position: relative;
+}
+.card .topic-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+.card-grid-static .card:nth-child(odd) .topic-list { color: #fff; }
+[dir="rtl"] .card .topic-list li { padding: 3px 14px 3px 0; }
+[dir="rtl"] .card .topic-list li::before { left: auto; right: 0; }
+
 /* Auto-sliding strip carousel — boxes peek at the edges, continuous motion, pure CSS */
 .strip-carousel {
   position: relative;
