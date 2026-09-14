@@ -417,6 +417,30 @@ section.block p.section-lead {
 @media (prefers-reduced-motion: reduce) {
   .strip-track { animation: none; }
 }
+
+/* JS takes over position control entirely once it loads */
+.strip-carousel--js .strip-track { animation: none; }
+.strip-carousel--js .carousel-arrow {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(15, 42, 74, 0.18);
+  transition: background 0.15s ease, color 0.15s ease;
+  z-index: 3;
+  padding: 0;
+}
+.strip-carousel .carousel-arrow-prev { left: 4px; }
+.strip-carousel .carousel-arrow-next { right: 4px; }
 @media (max-width: 680px) {
   .strip-carousel .card { flex-basis: 240px; width: 240px; }
 }
