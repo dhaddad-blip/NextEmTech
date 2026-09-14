@@ -594,6 +594,11 @@ section.block p.section-lead {
 .pillar {
   margin-bottom: 48px;
 }
+.pillar .section-lead {
+  text-align: left;
+  margin: 0 0 24px;
+  max-width: 640px;
+}
 section.block .pillar h2 {
   border-left: 4px solid var(--amber);
   padding-left: 16px;
@@ -969,6 +974,7 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   padding-right: 16px;
   text-align: right;
 }
+[dir="rtl"] .pillar .section-lead { text-align: right; }
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
 @media (max-width: 680px) {
   [dir="rtl"] .hero h1 { padding-left: 0; padding-right: 16px; }
