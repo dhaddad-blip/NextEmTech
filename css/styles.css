@@ -374,6 +374,47 @@ section.block p.section-lead {
   gap: 24px;
 }
 
+/* Auto-sliding strip carousel — boxes peek at the edges, continuous motion, pure CSS */
+.strip-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 -8px;
+  padding: 8px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+.strip-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: strip-scroll 32s linear infinite;
+}
+.strip-track:hover,
+.strip-track:focus-within {
+  animation-play-state: paused;
+}
+.strip-carousel .card {
+  flex: 0 0 280px;
+  width: 280px;
+}
+@keyframes strip-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+[dir="rtl"] .strip-track {
+  animation-name: strip-scroll-rtl;
+}
+@keyframes strip-scroll-rtl {
+  from { transform: translateX(0); }
+  to { transform: translateX(50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .strip-track { animation: none; }
+}
+@media (max-width: 680px) {
+  .strip-carousel .card { flex-basis: 240px; width: 240px; }
+}
+
 .trust-badge-wrap {
   display: flex;
   justify-content: center;
