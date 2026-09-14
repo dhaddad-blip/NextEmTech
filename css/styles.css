@@ -397,6 +397,12 @@ section.block p.section-lead {
   flex: 0 0 280px;
   width: 280px;
 }
+.strip-carousel .card:nth-child(odd) {
+  background: var(--navy-dark);
+  border-color: var(--navy-dark);
+}
+.strip-carousel .card:nth-child(odd) h3 { color: #fff; }
+.strip-carousel .card:nth-child(odd) p { color: #B8C4D1; }
 @keyframes strip-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
