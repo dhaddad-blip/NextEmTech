@@ -501,12 +501,12 @@ section.block p.section-lead {
 .card-grid-static .card:nth-child(odd) h3 { color: #fff; }
 .card-grid-static .card:nth-child(odd) p { color: #B8C4D1; }
 
-/* Services: Consulting / Training — one wide, elevated box per pillar
-   (not a grid of similar cards). Always light background; emphasis
-   comes from the border + shadow + amber top accent rather than from
-   color-alternation, so it stays readable as a single organized whole.
-   Governance keeps the .card-grid-static grid/background treatment
-   above, unchanged — only its heading style is unified below. */
+/* Services: Consulting / Training / Governance — one wide, elevated
+   box per pillar (not a grid of similar cards), all light background
+   throughout. Emphasis comes from the border + shadow + amber top
+   accent, not color-alternation. .cols-1/2/3 pick how many
+   topic-groups sit side by side; all collapse to a single stacked
+   column on mobile regardless. */
 .topic-box {
   background: #fff;
   border: 1px solid var(--border);
@@ -515,20 +515,24 @@ section.block p.section-lead {
   box-shadow: 0 6px 24px rgba(15, 42, 74, 0.1);
   padding: 36px;
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
   gap: 36px;
 }
+.topic-box.cols-1 { grid-template-columns: 1fr; }
+.topic-box.cols-2 { grid-template-columns: 1fr 1px 1fr; }
+.topic-box.cols-3 { grid-template-columns: 1fr 1px 1fr 1px 1fr; }
 .topic-group { min-width: 0; }
 .topic-divider { background: var(--border); }
 @media (max-width: 760px) {
-  .topic-box { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
+  .topic-box.cols-1,
+  .topic-box.cols-2,
+  .topic-box.cols-3 { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
   .topic-divider { height: 1px; width: 100%; }
 }
 /* The amber rounded-rectangle IS the heading now — it holds the real
    topic title (e.g. "Strategy & Advisory"), not an abbreviation badge
-   with a separate plain-text heading below it. Shared by the Services
-   topic-groups (Consulting/Training) and the Governance cards below,
-   so both follow the same "full title, not letters" rule. */
+   with a separate plain-text heading below it. Shared by every
+   topic-group on this page, Governance included, so all three pillars
+   follow the same "full title, not letters, light background" rule. */
 h3.topic-title {
   display: inline-block;
   background: var(--amber);
