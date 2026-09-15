@@ -1258,3 +1258,19 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   padding-bottom: 48px;
 }
 
+/* "What we do" gets the identical card treatment as the hero above --
+   same width behavior, same border/shadow/radius -- so the two
+   sections read as a matched pair rather than one styled section
+   followed by a flat one. The carousel's own -8px mask-bleed stays
+   comfortably inside this padding, no conflict. */
+.framed-section .container {
+  max-width: min(var(--max-width), 95vw);
+  background: #fff;
+  border-radius: 20px;
+  border-left: 4px solid var(--amber);
+  border-right: 4px solid var(--amber);
+  box-shadow: 0 12px 40px rgba(198, 142, 23, 0.25), 0 2px 8px rgba(15, 42, 74, 0.08);
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
