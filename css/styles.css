@@ -176,6 +176,7 @@ nav.main-nav a.active { color: var(--amber); }
 
 /* Hero */
 .hero {
+  position: relative;
   padding: 72px 0 56px;
   text-align: center;
 }
@@ -1240,5 +1241,72 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 @keyframes agent-pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
   50%      { transform: scale(1.16); opacity: 0.72; }
+}
+
+/* Hero side columns — desktop/wide-screen only (there's no side gap to
+   fill on mobile at all). A vertical node-and-line "data stream",
+   reusing the same flowing/pulsing language as the hero illustration
+   above, so it reads as a continuation of it rather than a separate
+   decoration. Plain HTML/CSS, not SVG — an absolutely-positioned line
+   that stretches to the hero's actual (variable) height is simpler to
+   get right this way than scaling an SVG non-uniformly. 1400px
+   threshold leaves at least ~150px of margin on each side before
+   these appear, so they never crowd the main content column. */
+.hero-side-decor {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+}
+.hero-side-decor-left { left: 28px; }
+.hero-side-decor-right { right: 28px; }
+@media (min-width: 1400px) {
+  .hero-side-decor { display: block; }
+}
+.dataflow-line {
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  bottom: 4%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--border);
+}
+.dataflow-node {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--navy);
+}
+.dataflow-node.node-1 { top: 6%; }
+.dataflow-node.node-2 { top: 27%; }
+.dataflow-node.node-3 { top: 50%; }
+.dataflow-node.node-4 { top: 73%; }
+.dataflow-node.node-5 { top: 94%; }
+@media (prefers-reduced-motion: no-preference) {
+  .dataflow-line {
+    background: repeating-linear-gradient(
+      to bottom, var(--amber) 0, var(--amber) 6px, transparent 6px, transparent 14px);
+    background-size: 2px 28px;
+    animation: dataflow-move 1.1s linear infinite;
+    opacity: 0.6;
+  }
+  .dataflow-node {
+    animation: agent-pulse 2.4s ease-in-out infinite;
+  }
+  .dataflow-node.node-1 { animation-delay: 0s; }
+  .dataflow-node.node-2 { animation-delay: 0.4s; }
+  .dataflow-node.node-3 { animation-delay: 0.8s; }
+  .dataflow-node.node-4 { animation-delay: 1.2s; }
+  .dataflow-node.node-5 { animation-delay: 1.6s; }
+}
+@keyframes dataflow-move {
+  to { background-position: 0 28px; }
 }
 
