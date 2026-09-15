@@ -181,7 +181,7 @@ nav.main-nav a.active { color: var(--amber); }
   text-align: center;
   background: var(--bg-alt);
 }
-.hero .container { max-width: min(var(--max-width), 88vw); }
+.hero .container { max-width: min(var(--max-width), 95vw); }
 .hero-tags {
   display: flex;
   justify-content: center;
