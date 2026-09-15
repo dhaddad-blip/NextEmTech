@@ -1252,37 +1252,18 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   50%      { opacity: 0.25; }
 }
 
-/* Hero side panels — solid rectangles, fluid width (no breakpoint):
-   min(1100px, 88vw) on the content column above means real margin
-   exists at every viewport, including ~980px (verified Android
-   desktop-site width), not just very wide screens. */
-.hero-side-decor {
-  display: block;
-  position: absolute;
-  top: 6%;
-  bottom: 6%;
-  width: clamp(12px, 4vw, 60px);
-  border-radius: 14px;
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
-  overflow: hidden;
-  pointer-events: none;
-}
-.hero-side-decor-left { left: clamp(3px, 1vw, 20px); }
-.hero-side-decor-right { right: clamp(3px, 1vw, 20px); }
-.hero-side-decor::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(198, 142, 23, 0.65) 45%, transparent 90%);
-  background-size: 100% 220%;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .hero-side-decor::after {
-    animation: dataflow-sweep 2.2s linear infinite;
-  }
-}
-@keyframes dataflow-sweep {
-  from { background-position: 0 -220%; }
-  to   { background-position: 0 220%; }
+/* Hero container — an emphasized, elevated card instead of a flat
+   section: white card sitting on the hero's own bg-alt background,
+   amber border on the left and right sides specifically (not top/
+   bottom, per direct request), amber-tinted shadow for a raised,
+   outward feel rather than a flat line. */
+.hero .container {
+  background: #fff;
+  border-radius: 20px;
+  border-left: 4px solid var(--amber);
+  border-right: 4px solid var(--amber);
+  box-shadow: 0 12px 40px rgba(198, 142, 23, 0.25), 0 2px 8px rgba(15, 42, 74, 0.08);
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
