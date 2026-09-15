@@ -767,15 +767,15 @@ h3.topic-title {
   border: 0;
   padding: 0;
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.92rem;
   text-align: left;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 .pillar-summary::after {
   content: "+";
   flex-shrink: 0;
   color: var(--amber);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1;
 }
 .pillar[open] .pillar-summary::after { content: "\2212"; }
