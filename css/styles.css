@@ -578,19 +578,11 @@ section.block p.section-lead {
   .topic-box.cols-3 { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
   .topic-divider { height: 1px; width: 100%; align-self: auto; }
 }
-.topic-summary {
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  list-style: none;
-}
-.topic-summary::-webkit-details-marker { display: none; }
-.topic-summary::marker { display: none; }
-/* The amber rounded-rectangle IS the heading now — it holds the real
-   topic title (e.g. "Strategy & Advisory"), not an abbreviation badge
-   with a separate plain-text heading below it. Shared by every
-   topic-group on this page, Governance included, so all three pillars
-   follow the same "full title, not letters, light background" rule. */
+/* The amber rounded-rectangle IS the heading — holds the real topic
+   title (e.g. "Strategy & Advisory"), not an abbreviation badge with a
+   separate plain-text heading below it. Non-interactive now (the
+   pillar itself is the collapsible unit -- see .pillar-summary above);
+   every topic-group inside an open pillar is always visible. */
 h3.topic-title {
   display: inline-block;
   background: var(--amber);
@@ -598,25 +590,11 @@ h3.topic-title {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.35;
-  padding: 10px 44px 10px 18px;
+  padding: 10px 18px;
   border-radius: 10px;
-  margin: 0;
-  position: relative;
+  margin: 0 0 16px;
 }
-h3.topic-title::after {
-  content: "+";
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.15rem;
-  line-height: 1;
-}
-.topic-group[open] h3.topic-title::after { content: "\2212"; }
-[dir="rtl"] h3.topic-title { padding: 10px 18px 10px 44px; }
-[dir="rtl"] h3.topic-title::after { right: auto; left: 16px; }
-.topic-body { padding-top: 18px; }
-.topic-body p { margin: 0; color: var(--slate); }
+.topic-group p { margin: 0; color: var(--slate); }
 
 /* Sub-topic list inside a grouped card/box (e.g. Services: Strategy &
    Advisory groups 3 offerings under one heading) — keeps every specific
@@ -767,21 +745,53 @@ h3.topic-title::after {
 }
 .btn-light:hover { background: var(--bg-alt); text-decoration: none; }
 
-/* Pillars (Services page) */
+/* Pillars (Services page) — each pillar (Consulting/Training/Governance)
+   is now the collapsible unit, not the topic-groups inside it. Same
+   zero-JS <details>/<summary> pattern as the FAQ, just at the section
+   level. Collapsed by default: a full-width navy bar per pillar, all
+   three naturally equal width since they're block-level with no
+   content-based sizing -- text length doesn't change the bar's width,
+   only what's written inside it. */
 .pillar {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(15, 42, 74, 0.08);
 }
+.pillar-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--navy);
+  padding: 20px 28px;
+}
+.pillar-summary::-webkit-details-marker { display: none; }
+.pillar-summary::marker { display: none; }
+.pillar-summary h2 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: left;
+}
+.pillar-summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--amber);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.pillar[open] .pillar-summary::after { content: "\2212"; }
+.pillar-body { padding: 32px 28px; }
 .pillar .section-lead {
   text-align: left;
   margin: 0 0 24px;
   max-width: 640px;
-}
-section.block .pillar h2 {
-  border-left: 4px solid var(--amber);
-  padding-left: 16px;
-  font-size: 1.6rem;
-  margin-bottom: 24px;
-  text-align: left;
 }
 .offer {
   padding: 20px 0;
@@ -1149,13 +1159,8 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   padding-right: 20px;
   text-align: right;
 }
-[dir="rtl"] section.block .pillar h2 {
-  border-left: none;
-  border-right: 4px solid var(--amber);
-  padding-left: 0;
-  padding-right: 16px;
-  text-align: right;
-}
+[dir="rtl"] .pillar-summary h2 { text-align: right; }
+[dir="rtl"] .pillar-summary { flex-direction: row-reverse; }
 [dir="rtl"] .pillar .section-lead { text-align: right; }
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, Arial, sans-serif; }
 @media (max-width: 680px) {
