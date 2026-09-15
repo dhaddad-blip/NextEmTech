@@ -826,6 +826,11 @@ blockquote.pullquote {
   color: var(--navy);
   font-size: 1.1rem;
 }
+[dir="rtl"] blockquote.pullquote {
+  border-left: none;
+  border-right: 4px solid var(--amber);
+  padding: 4px 22px 4px 0;
+}
 
 /* Contact */
 .contact-box {
