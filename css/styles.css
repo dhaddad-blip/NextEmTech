@@ -1226,62 +1226,57 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
    the page's own CSS. */
 @media (prefers-reduced-motion: no-preference) {
   .agent-line {
-    stroke-dasharray: 4 4;
-    animation: agent-flow 0.9s linear infinite;
+    stroke-dasharray: 6 5;
+    stroke-width: 2.5px;
+    animation: agent-flow 0.7s linear infinite;
   }
   .agent-node {
     transform-box: fill-box;
     transform-origin: center;
-    animation: agent-pulse 2.4s ease-in-out infinite;
+    animation: agent-pulse 2s ease-in-out infinite;
   }
   .agent-node-1 { animation-delay: 0s; }
-  .agent-node-2 { animation-delay: 0.5s; }
-  .agent-node-3 { animation-delay: 1s; }
+  .agent-node-2 { animation-delay: 0.4s; }
+  .agent-node-3 { animation-delay: 0.8s; }
   .agent-accent {
     transform-box: fill-box;
     transform-origin: center;
-    animation: agent-pulse 2.4s ease-in-out infinite;
-    animation-delay: 0.3s;
+    animation: agent-pulse 2s ease-in-out infinite;
+    animation-delay: 0.2s;
   }
 }
 @keyframes agent-flow {
-  to { stroke-dashoffset: -8; }
+  to { stroke-dashoffset: -11; }
 }
 @keyframes agent-pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50%      { transform: scale(1.16); opacity: 0.72; }
+  50%      { transform: scale(1.4); opacity: 0.5; }
 }
 
-/* Hero side columns — the previous 1400px threshold was wrong: I
-   assumed "desktop" meant a very wide monitor, but Android Chrome's
-   own "Request desktop site" only simulates a ~980px viewport
-   (verified, not guessed this time) -- narrower than this site's own
-   1100px content container, so there was never any margin left over
-   for a decoration to sit in at that width, regardless of threshold.
-   Fix: narrow the hero's own content column starting at 900px (not
-   the rest of the page, just the hero) so real margin exists well
-   before typical "desktop site" or tablet-landscape widths, and size
-   the decoration to fit comfortably within that margin. At the 900px
-   threshold itself: 780px hero column leaves 60px per side; the
-   decoration only needs 36px (12px inset + 24px width), so there's
-   slack even at the narrowest triggering width, and more on anything
-   wider (e.g. ~100px margin at Android's ~980px desktop-site view). */
-@media (min-width: 900px) {
-  .hero .container { max-width: 780px; }
-}
+/* Hero side columns — rebuilt to be genuinely fluid, not another
+   guessed breakpoint. Both dimensions use calc(Nvw - Xpx) clamped to
+   a floor: below this site's own 1100px content max-width, the
+   subtraction goes negative and the clamp floor holds a small
+   constant size (so it always fits inside the container's existing
+   24px padding, mobile included -- floor total is 4px+14px = 18px,
+   6px of headroom, true at every width up to 1100px, not just at a
+   few sample points, because both pieces are flat/constant in that
+   whole range). Above 1100px -- where the container itself stops
+   growing and real margin starts existing -- the same formulas grow
+   continuously with viewport width, tied to the actual container
+   breakpoint already in use elsewhere on the site rather than an
+   arbitrary guessed number. No display:none, no media query gate:
+   this is always visible, phone included, just very slim there. */
 .hero-side-decor {
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 24px;
+  width: clamp(14px, calc(4vw - 30px), 40px);
   pointer-events: none;
 }
-.hero-side-decor-left { left: 12px; }
-.hero-side-decor-right { right: 12px; }
-@media (min-width: 900px) {
-  .hero-side-decor { display: block; }
-}
+.hero-side-decor-left { left: clamp(4px, calc(1.5vw - 12.5px), 28px); }
+.hero-side-decor-right { right: clamp(4px, calc(1.5vw - 12.5px), 28px); }
 .dataflow-line {
   position: absolute;
   left: 50%;
@@ -1294,9 +1289,9 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
 .dataflow-node {
   position: absolute;
   left: 50%;
-  width: 10px;
-  height: 10px;
-  margin-left: -5px;
+  width: clamp(6px, 1vw, 10px);
+  height: clamp(6px, 1vw, 10px);
+  margin-left: calc(clamp(6px, 1vw, 10px) / -2);
   border-radius: 50%;
   background: #fff;
   border: 2px solid var(--navy);
