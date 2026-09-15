@@ -179,7 +179,9 @@ nav.main-nav a.active { color: var(--amber); }
   position: relative;
   padding: 72px 0 56px;
   text-align: center;
+  background: linear-gradient(180deg, var(--bg-alt) 0%, #fff 100%);
 }
+.hero .container { max-width: min(var(--max-width), 88vw); }
 .hero-tags {
   display: flex;
   justify-content: center;
@@ -1231,17 +1233,13 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
     animation: agent-flow 0.7s linear infinite;
   }
   .agent-node {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: agent-pulse 2s ease-in-out infinite;
+    animation: agent-pulse 1.4s ease-in-out infinite;
   }
   .agent-node-1 { animation-delay: 0s; }
   .agent-node-2 { animation-delay: 0.4s; }
   .agent-node-3 { animation-delay: 0.8s; }
   .agent-accent {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: agent-pulse 2s ease-in-out infinite;
+    animation: agent-pulse 1.4s ease-in-out infinite;
     animation-delay: 0.2s;
   }
 }
@@ -1249,76 +1247,41 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   to { stroke-dashoffset: -11; }
 }
 @keyframes agent-pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%      { transform: scale(1.4); opacity: 0.5; }
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
 }
 
-/* Hero side columns — rebuilt to be genuinely fluid, not another
-   guessed breakpoint. Both dimensions use calc(Nvw - Xpx) clamped to
-   a floor: below this site's own 1100px content max-width, the
-   subtraction goes negative and the clamp floor holds a small
-   constant size (so it always fits inside the container's existing
-   24px padding, mobile included -- floor total is 4px+14px = 18px,
-   6px of headroom, true at every width up to 1100px, not just at a
-   few sample points, because both pieces are flat/constant in that
-   whole range). Above 1100px -- where the container itself stops
-   growing and real margin starts existing -- the same formulas grow
-   continuously with viewport width, tied to the actual container
-   breakpoint already in use elsewhere on the site rather than an
-   arbitrary guessed number. No display:none, no media query gate:
-   this is always visible, phone included, just very slim there. */
+/* Hero side panels — solid rectangles, fluid width (no breakpoint):
+   min(1100px, 88vw) on the content column above means real margin
+   exists at every viewport, including ~980px (verified Android
+   desktop-site width), not just very wide screens. */
 .hero-side-decor {
   display: block;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: clamp(14px, calc(4vw - 30px), 40px);
+  top: 6%;
+  bottom: 6%;
+  width: clamp(12px, 4vw, 60px);
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+  overflow: hidden;
   pointer-events: none;
 }
-.hero-side-decor-left { left: clamp(4px, calc(1.5vw - 12.5px), 28px); }
-.hero-side-decor-right { right: clamp(4px, calc(1.5vw - 12.5px), 28px); }
-.dataflow-line {
+.hero-side-decor-left { left: clamp(3px, 1vw, 20px); }
+.hero-side-decor-right { right: clamp(3px, 1vw, 20px); }
+.hero-side-decor::after {
+  content: "";
   position: absolute;
-  left: 50%;
-  top: 4%;
-  bottom: 4%;
-  width: 2px;
-  margin-left: -1px;
-  background: var(--border);
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(198, 142, 23, 0.65) 45%, transparent 90%);
+  background-size: 100% 220%;
 }
-.dataflow-node {
-  position: absolute;
-  left: 50%;
-  width: clamp(6px, 1vw, 10px);
-  height: clamp(6px, 1vw, 10px);
-  margin-left: calc(clamp(6px, 1vw, 10px) / -2);
-  border-radius: 50%;
-  background: #fff;
-  border: 2px solid var(--navy);
-}
-.dataflow-node.node-1 { top: 6%; }
-.dataflow-node.node-2 { top: 27%; }
-.dataflow-node.node-3 { top: 50%; }
-.dataflow-node.node-4 { top: 73%; }
-.dataflow-node.node-5 { top: 94%; }
 @media (prefers-reduced-motion: no-preference) {
-  .dataflow-line {
-    background: repeating-linear-gradient(
-      to bottom, var(--amber) 0, var(--amber) 6px, transparent 6px, transparent 14px);
-    background-size: 2px 28px;
-    animation: dataflow-move 1.1s linear infinite;
-    opacity: 0.6;
+  .hero-side-decor::after {
+    animation: dataflow-sweep 2.2s linear infinite;
   }
-  .dataflow-node {
-    animation: agent-pulse 2.4s ease-in-out infinite;
-  }
-  .dataflow-node.node-1 { animation-delay: 0s; }
-  .dataflow-node.node-2 { animation-delay: 0.4s; }
-  .dataflow-node.node-3 { animation-delay: 0.8s; }
-  .dataflow-node.node-4 { animation-delay: 1.2s; }
-  .dataflow-node.node-5 { animation-delay: 1.6s; }
 }
-@keyframes dataflow-move {
-  to { background-position: 0 28px; }
+@keyframes dataflow-sweep {
+  from { background-position: 0 -220%; }
+  to   { background-position: 0 220%; }
 }
 
