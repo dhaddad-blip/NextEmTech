@@ -1252,26 +1252,34 @@ footer.site-footer .foot-logo .accent { color: var(--amber-light); }
   50%      { transform: scale(1.16); opacity: 0.72; }
 }
 
-/* Hero side columns — desktop/wide-screen only (there's no side gap to
-   fill on mobile at all). A vertical node-and-line "data stream",
-   reusing the same flowing/pulsing language as the hero illustration
-   above, so it reads as a continuation of it rather than a separate
-   decoration. Plain HTML/CSS, not SVG — an absolutely-positioned line
-   that stretches to the hero's actual (variable) height is simpler to
-   get right this way than scaling an SVG non-uniformly. 1400px
-   threshold leaves at least ~150px of margin on each side before
-   these appear, so they never crowd the main content column. */
+/* Hero side columns — the previous 1400px threshold was wrong: I
+   assumed "desktop" meant a very wide monitor, but Android Chrome's
+   own "Request desktop site" only simulates a ~980px viewport
+   (verified, not guessed this time) -- narrower than this site's own
+   1100px content container, so there was never any margin left over
+   for a decoration to sit in at that width, regardless of threshold.
+   Fix: narrow the hero's own content column starting at 900px (not
+   the rest of the page, just the hero) so real margin exists well
+   before typical "desktop site" or tablet-landscape widths, and size
+   the decoration to fit comfortably within that margin. At the 900px
+   threshold itself: 780px hero column leaves 60px per side; the
+   decoration only needs 36px (12px inset + 24px width), so there's
+   slack even at the narrowest triggering width, and more on anything
+   wider (e.g. ~100px margin at Android's ~980px desktop-site view). */
+@media (min-width: 900px) {
+  .hero .container { max-width: 780px; }
+}
 .hero-side-decor {
   display: none;
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 40px;
+  width: 24px;
   pointer-events: none;
 }
-.hero-side-decor-left { left: 28px; }
-.hero-side-decor-right { right: 28px; }
-@media (min-width: 1400px) {
+.hero-side-decor-left { left: 12px; }
+.hero-side-decor-right { right: 12px; }
+@media (min-width: 900px) {
   .hero-side-decor { display: block; }
 }
 .dataflow-line {
