@@ -175,6 +175,17 @@ nav.main-nav a.active { color: var(--amber); }
 .side-drawer-nav a:hover { color: var(--amber); background: var(--bg-alt); text-decoration: none; }
 
 /* Hero */
+.home-banner-wrap {
+  max-width: min(var(--max-width), 95vw);
+  margin: 32px auto 0;
+}
+.home-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(15, 42, 74, 0.18);
+}
 .hero {
   position: relative;
   padding: 72px 0 56px;
@@ -466,6 +477,13 @@ section.block p.section-lead {
 .mt-48 { margin-top: 48px; }
 .max-w-680 { max-width: 680px; }
 .link-white { color: #fff; }
+.linkedin-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: underline;
+}
+.linkedin-icon { width: 20px; height: 20px; flex-shrink: 0; }
 .gtm-noscript-frame { display: none; visibility: hidden; }
 
 .founder-bio {
@@ -695,6 +713,8 @@ h3.topic-title {
 .trust-badge-wrap {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   margin: 36px 0 8px;
 }
 .trust-badge {
@@ -812,6 +832,16 @@ section.block .pillar-summary h2 {
   padding: 48px 0 32px;
   border-bottom: 1px solid var(--border);
 }
+.flag-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--slate);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.flag-icon { width: 22px; height: auto; border-radius: 2px; box-shadow: 0 0 0 1px var(--border); }
 .page-hero h1 { font-size: 2.1rem; margin: 0 0 10px; }
 .page-hero p.page-hero-subtitle {
   font-style: italic;
